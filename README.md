@@ -29,24 +29,24 @@ Check out the live demo: [https://v0-creative-portfolio-o7.vercel.app/](https://
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-   ```bash
+   \`\`\`bash
    git clone https://github.com/shinekyaw/Creative-Portfolio.git
-   ```
+   \`\`\`
 
 2. Navigate to the project directory:
-   ```bash
+   \`\`\`bash
    cd Creative-Portfolio
-   ```
+   \`\`\`
 
 3. Install dependencies:
-   ```bash
+   \`\`\`bash
    npm install
-   ```
+   \`\`\`
 
 4. Run the development server:
-   ```bash
+   \`\`\`bash
    npm run dev
-   ```
+   \`\`\`
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
 
