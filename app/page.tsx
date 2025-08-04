@@ -39,6 +39,7 @@ export default function Portfolio() {
               <span className="block">Hi, I'm</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-neutral-500">
                Earl Balitcha
+
               </span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-[600px]">
