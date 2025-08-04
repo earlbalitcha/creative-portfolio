@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
 import { SkillBadge } from "@/components/skill-badge"
 import { Timeline } from "@/components/timeline"
@@ -15,7 +14,7 @@ import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#012133] via-zinc-900 to-black text-white overflow-hidden">
       <MouseFollower />
       <ScrollProgress />
       <FloatingNav />
@@ -23,7 +22,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#EF3D5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
@@ -32,63 +31,48 @@ export default function Portfolio() {
           <div className="space-y-6">
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 mt-4">
-                <span className="relative z-10">Software Engineer & Creative Developer</span>
+                <span className="relative z-10">Fullstack Web Developer</span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="block">Hi, I'm</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-               this my branch
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-neutral-500">
+               Earl Balitcha
               </span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-[600px]">
               I craft exceptional digital experiences with code, creativity, and a passion for innovation.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
+              <button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0 px-6 py-3 rounded-md text-white font-medium transition-all hover:scale-105">
                 <span className="relative z-10 flex items-center">
                   View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-              </Button>
-              <Button
-                variant="outline"
-                className="border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500"
-              >
+              </button>
+              <button className="px-6 py-3 rounded-md border border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500 transition-colors">
                 Contact Me
-              </Button>
+              </button>
             </div>
             <div className="flex gap-4 pt-4">
               <Link href="https://github.com/shinekyaw" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-                >
+                <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
-                </Button>
+                </button>
               </Link>
               <Link href="https://www.linkedin.com/in/shinekyawkyawaung/" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-                >
+                <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
-                </Button>
-              </Link>             
+                </button>
+              </Link>
               <Link href="mailto:shinekyawkyawaung@gmail.com">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-                >
+                <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
-                </Button>
+                </button>
               </Link>
             </div>
           </div>
@@ -169,7 +153,9 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
+                  <button className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white rounded-md transition-colors">
+                    Download Resume
+                  </button>
                 </div>
               </GlassmorphicCard>
             </div>
@@ -354,34 +340,22 @@ export default function Portfolio() {
           </div>
           <div className="flex gap-4">
             <Link href="https://github.com/shinekyaw" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
+              <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
-              </Button>
+              </button>
             </Link>
             <Link href="https://www.linkedin.com/in/shinekyawkyawaung/" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
+              <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
-              </Button>
+              </button>
             </Link>
             <Link href="mailto:shinekyawkyawaung@gmail.com">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
+              <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
-              </Button>
+              </button>
             </Link>
           </div>
         </div>

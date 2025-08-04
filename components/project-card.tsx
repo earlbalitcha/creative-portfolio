@@ -5,9 +5,6 @@ import Link from "next/link"
 import { ArrowUpRight, Github } from "lucide-react"
 import { motion } from "framer-motion"
 
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-
 interface ProjectCardProps {
   title: string
   description: string
@@ -51,29 +48,28 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
 
             <div className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag, index) => (
-                <Badge key={index} variant="secondary" className="bg-zinc-700/50 hover:bg-zinc-700 text-zinc-300">
+                <span
+                  key={index}
+                  className="px-2.5 py-0.5 text-xs font-semibold bg-zinc-700/50 hover:bg-zinc-700 text-zinc-300 rounded-full border border-transparent transition-colors"
+                >
                   {tag}
-                </Badge>
+                </span>
               ))}
             </div>
 
             <div className="flex justify-between mt-auto pt-4 border-t border-zinc-700/50">
-              <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-white hover:bg-zinc-700/50" asChild>
-                <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
+              <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
+                <button className="px-3 py-2 text-sm text-zinc-400 hover:text-white hover:bg-zinc-700/50 rounded-md transition-colors flex items-center">
                   <Github className="mr-2 h-4 w-4" />
                   Code
-                </Link>
-              </Button>
-              <Button
-                size="sm"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
-                asChild
-              >
-                <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
+                </button>
+              </Link>
+              <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
+                <button className="px-4 py-2 text-sm bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0 rounded-md text-white font-medium transition-all flex items-center">
                   Live Demo
                   <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                </button>
+              </Link>
             </div>
           </div>
 
