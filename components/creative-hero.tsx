@@ -97,11 +97,11 @@ export function CreativeHero() {
       }
 
       draw() {
-        ctx.fillStyle = this.color
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.closePath()
-        ctx.fill()
+        ctx!.fillStyle = this.color
+        ctx!.beginPath()
+        ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        ctx!.closePath()
+        ctx!.fill()
       }
     }
 
@@ -113,8 +113,8 @@ export function CreativeHero() {
     function init() {
       particlesArray.length = 0
 
-      const canvasWidth = canvas.width / devicePixelRatio
-      const canvasHeight = canvas.height / devicePixelRatio
+      const canvasWidth = canvas!.width / devicePixelRatio
+      const canvasHeight = canvas!.height / devicePixelRatio
 
       const numX = Math.floor(canvasWidth / gridSize)
       const numY = Math.floor(canvasHeight / gridSize)

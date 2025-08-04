@@ -4,8 +4,6 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
 import { useMobile } from "@/hooks/use-mobile"
 
 export function FloatingNav() {
@@ -54,40 +52,39 @@ export function FloatingNav() {
           {isMobile ? (
             <div className="relative flex items-center justify-between">
               <Link href="/" className="font-bold text-lg">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Shine</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                  Shine
+                </span>
                 <span className="text-white">KKA</span>
               </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-zinc-400 hover:text-white hover:bg-zinc-700/50"
+              <button
+                className="text-zinc-400 hover:text-white hover:bg-zinc-700/50 p-2 rounded-md transition-colors"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
+              </button>
             </div>
           ) : (
             <div className="relative flex items-center gap-1">
               <Link href="/" className="font-bold text-lg mr-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Shine</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                  Shine
+                </span>
                 <span className="text-white">KKA</span>
               </Link>
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-3 py-1 text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                  className="px-3 py-1 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-md hover:bg-zinc-700/50"
                   onClick={handleNavClick}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button
-                size="sm"
-                className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
-              >
+              <button className="ml-2 px-4 py-2 text-sm bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0 rounded-md text-white font-medium transition-all">
                 Resume
-              </Button>
+              </button>
             </div>
           )}
         </div>
@@ -112,9 +109,9 @@ export function FloatingNav() {
                 {item.name}
               </Link>
             ))}
-            <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
+            <button className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0 rounded-md text-white font-medium transition-all">
               Resume
-            </Button>
+            </button>
           </div>
         </motion.div>
       )}

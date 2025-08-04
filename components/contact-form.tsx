@@ -1,19 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
-
 export function ContactForm() {
-  const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -22,13 +16,12 @@ export function ContactForm() {
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    })
-
+    setMessage("Thanks for reaching out. I'll get back to you soon.")
     setIsSubmitting(false)
     e.currentTarget.reset()
+
+    // Clear message after 5 seconds
+    setTimeout(() => setMessage(""), 5000)
   }
 
   return (
@@ -46,38 +39,40 @@ export function ContactForm() {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <Input
+              <input
+                type="text"
                 placeholder="Your Name"
                 required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                className="w-full px-3 py-2 bg-zinc-900/50 border border-zinc-700 rounded-md focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white placeholder-zinc-400"
               />
             </div>
             <div className="space-y-2">
-              <Input
+              <input
                 type="email"
                 placeholder="Your Email"
                 required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                className="w-full px-3 py-2 bg-zinc-900/50 border border-zinc-700 rounded-md focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white placeholder-zinc-400"
               />
             </div>
             <div className="space-y-2">
-              <Input
+              <input
+                type="text"
                 placeholder="Subject"
                 required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                className="w-full px-3 py-2 bg-zinc-900/50 border border-zinc-700 rounded-md focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white placeholder-zinc-400"
               />
             </div>
             <div className="space-y-2">
-              <Textarea
+              <textarea
                 placeholder="Your Message"
                 rows={5}
                 required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                className="w-full px-3 py-2 bg-zinc-900/50 border border-zinc-700 rounded-md focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-white placeholder-zinc-400 resize-none"
               />
             </div>
-            <Button
+            <button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0 px-6 py-3 rounded-md text-white font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
@@ -87,8 +82,14 @@ export function ContactForm() {
                   Send Message <Send className="ml-2 h-4 w-4" />
                 </>
               )}
-            </Button>
+            </button>
           </form>
+
+          {message && (
+            <div className="mt-4 p-3 bg-green-500/10 border border-green-500/20 rounded-md text-green-400 text-center">
+              {message}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
