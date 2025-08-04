@@ -39,7 +39,7 @@ export default function Portfolio() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="block">Hi, I'm</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                Earl Balitchaasds
+                Earl Balitchaasdsasdsaasd
               </span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-[600px]">
